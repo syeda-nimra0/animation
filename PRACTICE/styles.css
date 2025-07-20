@@ -1,0 +1,146 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.sun{
+    height: 175px;
+    width: 175px;
+    border-radius: 50%;
+    background: rgb(225, 81, 0);
+    position: absolute;
+    box-shadow: 0 0 75px rgba(255, 141, 0, 1);
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('stars-in-the-sky-with-a-black-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.earth{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    background: url('483185721_3789277708050956_3109962865641382668_n.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    animation: earth-orbit 7s linear infinite;
+}
+/* moon */
+.earth::after{
+    content: "";
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    background: url('2.png');
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    animation: moon-orbit 3.5s linear infinite;
+}
+@keyframes earth-orbit{
+    from{
+         transform: rotate(0deg) translateX(220px) rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg) translateX(220px) rotate(-360deg);
+    }
+
+}
+@keyframes moon-orbit{
+    from{
+         transform: rotate(0deg) translateX(75px) rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg) translateX(75px) rotate(-360deg);
+    }
+
+}
+
+
+
+
+/* Small Devices (Mobiles) */
+@media (max-width: 600px) {
+    .sun {
+        height: 100px;
+        width: 100px;
+    }
+
+    .earth {
+        height: 45px;
+        width: 45px;
+        animation: earth-orbit 7s linear infinite;
+    }
+
+    .earth::after {
+        width: 25px;
+        height: 25px;
+        animation: moon-orbit 3.5s linear infinite;
+    }
+
+    @keyframes earth-orbit {
+        from {
+            transform: rotate(0deg) translateX(120px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(120px) rotate(-360deg);
+        }
+    }
+
+    @keyframes moon-orbit {
+        from {
+            transform: rotate(0deg) translateX(40px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(40px) rotate(-360deg);
+        }
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 601px) and (max-width: 992px) {
+    .sun {
+        height: 130px;
+        width: 130px;
+    }
+
+    .earth {
+        height: 60px;
+        width: 60px;
+    }
+
+    .earth::after {
+        width: 35px;
+        height: 35px;
+    }
+
+    @keyframes earth-orbit {
+        from {
+            transform: rotate(0deg) translateX(180px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(180px) rotate(-360deg);
+        }
+    }
+
+    @keyframes moon-orbit {
+        from {
+            transform: rotate(0deg) translateX(60px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(60px) rotate(-360deg);
+        }
+    }
+}
+
+/* Large Devices (Desktops) — original size remains */
+@media (min-width: 993px) {
+    /* No changes needed — original styling will apply */
+}
